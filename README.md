@@ -44,5 +44,5 @@ git add . && git commit -m "last update" && git push
 git add . && git commit -m "last update" && git push
 ```
 
-###CAVEATS
+### CAVEATS
 This code will only work if run in an IDE, synchronized with the GitHb repo you would like  your page to be displayed at. Also, all the files are going to be written in this same repo, however, the only file you really need is index.html. In my case, I have all the files, but the index, in the gitignore (the Python scripts to parse the json response, and the json response itself).
