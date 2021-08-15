@@ -8,8 +8,6 @@ curl -o runs_lst.json -X GET --header "Authorization: Bearer $DATABRICKS_TOKEN" 
 
 run_id_v=$(python run_id_parse.py)
 
-echo $run_id_v
-
 curl -o output.json -X GET --header "Authorization: Bearer $DATABRICKS_TOKEN" \
 <databricks-instance>/api/2.0/jobs/runs/export?run_id=$run_id_v
 
