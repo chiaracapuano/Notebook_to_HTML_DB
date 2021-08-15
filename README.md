@@ -2,7 +2,7 @@
 
 ### The script is an adaptation of Databricks "Runs export" feature (https://docs.databricks.com/dev-tools/api/latest/jobs.html#runs-export). This Databricks API feature requires the user to input the run_id, the notebook run in that specific instance will then be exported into HTML format. My code, on the other hand, uses the more generic job_id to extract the run_id of the last run, converts its notebook  into HTML and pushes it into a GitHb repo (the code is meant to be used in an IDE, properly synced with the GitHub repo where the user wants the web page to live).
 
-###How the code works:
+### How the code works:
 
 1. connect to the Databricks API of your institution via token. Since I would like this GitHub webpage to be refreshed periodically for a long time period, I set the token expiration to "never" (which is equivalent to an empty string in the Databricks UI for specifying the token time validity).
 The code below lists the specific job_id's runs in descending order by start time (all the available settings can be found here: https://docs.databricks.com/dev-tools/api/latest/jobs.html#runs-list. In my case, for example, I want the single, most recent (*offset=0* and *limit=1*) job run (*run_type=JOB_RUN*), that finished running (*completed_only=true*)).
